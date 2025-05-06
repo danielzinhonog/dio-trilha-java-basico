@@ -3,6 +3,7 @@ package dio.web.api.controller;
 import java.util.List;
 import dio.web.api.model.Usuario;
 import dio.web.api.repository.UsuarioRepository;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -32,6 +33,10 @@ public class UsuarioController{
     }
     @PostMapping()
     public void postUser(@RequestBody Usuario usuario){
+        repository.save(usuario);
+    }
+    @PutMapping()
+    public void putUser(@RequestBody Usuario usuario){
         repository.save(usuario);
     }
 }
